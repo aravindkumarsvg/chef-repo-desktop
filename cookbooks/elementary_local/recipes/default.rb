@@ -12,3 +12,5 @@ include_recipe "elementary_local::vim"
 include_recipe "elementary_local::git"
 # Includes Sublime Text recipe
 include_recipe "elementary_local::sublime_text"
+# Includes Virtualbox recipe
+include_recipe "elementary_local::virtualbox"

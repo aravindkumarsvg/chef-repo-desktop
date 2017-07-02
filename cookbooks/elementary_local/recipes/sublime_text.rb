@@ -65,4 +65,4 @@ if defined? node["sublime_text"]["package"]
       only_if { defined? node["sublime_text"]["action"] && node["sublime_text"]["action"] == "install" }
     end
   end
-end	
+end  
