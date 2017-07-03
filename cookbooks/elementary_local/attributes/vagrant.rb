@@ -1,0 +1,1 @@
+default["vagrant"]["action"] = "install"
