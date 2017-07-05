@@ -1,1 +1,4 @@
 .chef/local-mode-cache/
+.chef/chef-client-running.pid
+.chef/cookbooks/
+.chef/remote_file/

@@ -1,0 +1,5 @@
+{
+  "runlist":  [
+                "recipe[elementary_local::nvm]"
+              ]
+}

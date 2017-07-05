@@ -18,3 +18,5 @@ include_recipe "elementary_local::virtualbox"
 include_recipe "elementary_local::vagrant"
 # Includes Docker recipe
 include_recipe "elementary_local::docker"
+# Includes NVM recipe
+include_recipe "elementary_local::nvm"
