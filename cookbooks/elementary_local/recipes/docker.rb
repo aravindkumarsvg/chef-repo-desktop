@@ -17,8 +17,8 @@
 # limitations under the License.
 
 # Includes Docker Engine recipe
-# include_recipe "elementary_local::docker_engine"
+include_recipe "elementary_local::docker_engine"
 # Includes Docker Machine recipe
-# include_recipe "elementary_local::docker_machine"
+include_recipe "elementary_local::docker_machine"
 # Includes Docker Compose recipe
 include_recipe "elementary_local::docker_compose"
