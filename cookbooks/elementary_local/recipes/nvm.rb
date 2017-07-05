@@ -23,3 +23,22 @@ git node["nvm"]["binary"]["git"]["path"] do
   action node["nvm"]["binary"]["git"]["action"].to_sym
   not_if { node["nvm"]["action"] == "remove" }
 end
+
+# Adds the nvm to bashrc
+ruby_block "insert_nvm_bashrc" do
+  block do
+    file = Chef::Util::FileEdit.new(node["nvm"]["binary"]["bashrc"]["path"])
+    file.insert_line_if_no_match("/nvm/ig", node["nvm"]["binary"]["bashrc"]["content"])
+    file.write_file
+  end
+  not_if "grep -qi nvm " + node["nvm"]["binary"]["bashrc"]["path"]
+  not_if { node["nvm"]["action"] == "remove" }
+end
+
+# Removes the nvm directory in case of uninstallation
+directory node["nvm"]["binary"]["git"]["path"] do
+  recursvie true
+  action :delete
+  only_if { node["nvm"]["action"] == "remove" }
+end
+

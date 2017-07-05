@@ -2,3 +2,4 @@
 .chef/chef-client-running.pid
 .chef/cookbooks/
 .chef/remote_file/
+.chef/chef-stacktrace.out

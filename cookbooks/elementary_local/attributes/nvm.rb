@@ -6,3 +6,10 @@ default["nvm"]["binary"]["git"] =   {
                                       "path" => ::File.join(ENV["HOME"], ".nvm"),
                                       "action" => "checkout"
                                     }
+default["nvm"]["binary"]["bashrc"] = {
+  "path" => ::File.join(ENV["HOME"], ".bashrc"),
+  "content" => <<-EOF
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+EOF
+}
