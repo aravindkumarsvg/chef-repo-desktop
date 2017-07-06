@@ -4,6 +4,8 @@ default["nvm"]["binary"]["git"] =   {
                                       "repository" => "https://github.com/creationix/nvm.git",
                                       "tag" => "v0.33.2",
                                       "path" => ::File.join(ENV["HOME"], ".nvm"),
+                                      "user" => "aravind",
+                                      "group" => "aravind",
                                       "action" => "checkout"
                                     }
 default["nvm"]["binary"]["bashrc"] = {
@@ -13,3 +15,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 EOF
 }
+
+default["nvm"]["node"] =  {
+                            "versions" => {
+                              "8.1.3" => "install"
+                            },
+                            "default" => "8.1.3"
+                          }
