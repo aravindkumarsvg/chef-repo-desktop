@@ -20,3 +20,5 @@ include_recipe "elementary_local::vagrant"
 include_recipe "elementary_local::docker"
 # Includes NVM recipe
 include_recipe "elementary_local::nvm"
+# Includes Terminator recipe
+include_recipe "elementary_local::terminator"
