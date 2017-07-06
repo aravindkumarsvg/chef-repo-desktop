@@ -20,8 +20,8 @@
 git node["nvm"]["binary"]["git"]["path"] do
   repository node["nvm"]["binary"]["git"]["repository"]
   checkout_branch node["nvm"]["binary"]["git"]["tag"]
-  user node["nvm"]["binary"]["git"]["user"]
-  group node["nvm"]["binary"]["git"]["group"]
+  user node["user"]
+  group node["group"]
   action node["nvm"]["binary"]["git"]["action"].to_sym
   not_if { node["nvm"]["action"] == "remove" }
 end
@@ -39,12 +39,11 @@ end
 
 # Sources the bashrc file
 bash "Soruces_Bashrc" do
-  environment ({ "HOME" => "/home/aravind", "USER" => node["nvm"]["binary"]["git"]["user"] })
   code <<-EOH
     source #{node["nvm"]["binary"]["bashrc"]["path"]}
   EOH
-  user node["nvm"]["binary"]["git"]["user"]
-  group node["nvm"]["binary"]["git"]["group"]
+  user node["user"]
+  group node["group"]
   action :run
   not_if { node["nvm"]["action"] == "remove" }
 end
@@ -52,7 +51,6 @@ end
 # Installs/Uninstalls the Node JS versions
 node["nvm"]["node"]["versions"].each do |version, nvm_action|
   bash "Node JS - #{nvm_action} - #{version}" do
-    environment ({ "HOME" => "/home/aravind", "USER" => node["nvm"]["binary"]["git"]["user"] })
     code <<-EOH
       #{node['nvm']['binary']['bashrc']['content']}
       nvm ls #{version}
@@ -71,8 +69,8 @@ node["nvm"]["node"]["versions"].each do |version, nvm_action|
         ;;
       esac
     EOH
-    user node["nvm"]["binary"]["git"]["user"]
-    group node["nvm"]["binary"]["git"]["group"]
+    user node["user"]
+    group node["group"]
     ignore_failure true
     action :run
     only_if { node["nvm"]["action"] == "install" }
@@ -81,7 +79,6 @@ end
 
 # Sets the default Node JS version
 bash "Node JS - Default - #{node['nvm']['node']['default']}" do
-  environment ({ "HOME" => "/home/aravind", "USER" => node["nvm"]["binary"]["git"]["user"] })
   code <<-EOH
     #{node['nvm']['binary']['bashrc']['content']}
     nvm ls #{node['nvm']['node']['default']}
@@ -90,8 +87,8 @@ bash "Node JS - Default - #{node['nvm']['node']['default']}" do
       nvm alias default #{node['nvm']['node']['default']}
     fi
   EOH
-  user node["nvm"]["binary"]["git"]["user"]
-  group node["nvm"]["binary"]["git"]["group"]
+  user node["user"]
+  group node["group"]
   ignore_failure true
   action :run
   only_if { node["nvm"]["action"] == "install" }

@@ -4,8 +4,6 @@ default["nvm"]["binary"]["git"] =   {
                                       "repository" => "https://github.com/creationix/nvm.git",
                                       "tag" => "v0.33.2",
                                       "path" => ::File.join(ENV["HOME"], ".nvm"),
-                                      "user" => "aravind",
-                                      "group" => "aravind",
                                       "action" => "checkout"
                                     }
 default["nvm"]["binary"]["bashrc"] = {

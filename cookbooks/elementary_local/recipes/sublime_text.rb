@@ -59,8 +59,8 @@ if defined? node["sublime_text"]["package"]
     git package_path do
       repository repository
       depth 1
-      user node["sublime_text"]["package"]["user"]
-      group node["sublime_text"]["package"]["group"]
+      user node["user"]
+      group node["group"]
       action :checkout
       only_if { defined? node["sublime_text"]["action"] && node["sublime_text"]["action"] == "install" }
     end

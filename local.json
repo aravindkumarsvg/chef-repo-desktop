@@ -1,5 +1,5 @@
 {
   "run_list":  [
-                "recipe[elementary_local::terminator]"
+                "recipe[elementary_local::xclip]"
               ]
 }

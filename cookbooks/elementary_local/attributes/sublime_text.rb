@@ -11,13 +11,9 @@ default["sublime_text"]["package_control"] = {
                                                 "uri" => "http://sublime.wbond.net/Package%20Control.sublime-package",
                                                 "directory" => ::File.join(ENV['HOME'], '.config/sublime-text-3/Installed Packages'),
                                                 "path" => ::File.join(ENV['HOME'], '.config/sublime-text-3/Installed Packages', 'Package Control.sublime-package'),
-                                                "owner" => "aravind",
-                                                "group" => "aravind",
                                                 "mode" => "0755",
                                                 "action" => "create"
                                               }
-default["sublime_text"]["package"]["user"] = "aravind"
-default["sublime_text"]["package"]["group"] = "aravind"
 default["sublime_text"]["package"]["path"] = ::File.join(ENV['HOME'], '.config/sublime-text-3/Packages/')
 default["sublime_text"]["package"]["list"] = {
                                               "DocBlockr" => "https://github.com/spadgos/sublime-jsdocs.git",
