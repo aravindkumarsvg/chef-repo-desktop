@@ -36,6 +36,14 @@ apt_update 'update' do
   only_if { defined? node["virtualbox"]["action"] && node["virtualbox"]["action"] == "install" }
 end
 
+# Installs Dependencies
+node["virtualbox"]["dependencies"].each do |dependency|
+  package "#{dependency}" do
+    action :install
+    only_if { defined? node["virtualbox"]["action"] && node["virtualbox"]["action"] == "install" }
+  end
+end
+
 # Installs Virtualbox
 package "virtualbox-" + node["virtualbox"]["version"] do
   action node["virtualbox"]["action"].to_sym

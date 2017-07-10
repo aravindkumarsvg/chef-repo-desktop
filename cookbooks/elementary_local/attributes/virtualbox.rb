@@ -10,3 +10,5 @@ default["virtualbox"]["apt_repository"] = {
                                               "distro" => "amd64",
                                               "action" => "add"
                                             }
+
+default["virtualbox"]["dependencies"] = [ "dkms", "build-essential", "linux-headers-" + node["kernel"]["release"] ]

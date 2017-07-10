@@ -15,6 +15,7 @@ default["sublime_text"]["package_control"] = {
                                                 "action" => "create"
                                               }
 default["sublime_text"]["package"]["path"] = ::File.join(ENV['HOME'], '.config/sublime-text-3/Packages/')
+default["sublime_text"]["package"]["mode"] = "0755"
 default["sublime_text"]["package"]["list"] = {
                                               "DocBlockr" => "https://github.com/spadgos/sublime-jsdocs.git",
                                               "Typescript" => "https://github.com/Microsoft/TypeScript-Sublime-Plugin.git",

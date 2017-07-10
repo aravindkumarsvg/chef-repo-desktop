@@ -16,14 +16,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-Chef::Log.warn(node["docker_compose"]["binary"]["uri"])
-
 # Installs Docker Compose
 remote_file node["docker_compose"]["binary"]["path"] do
   source node["docker_compose"]["binary"]["uri"]
+  owner node["user"]
+  group node["group"]
   mode node["docker_compose"]["binary"]["mode"]
   action node["docker_compose"]["binary"]["action"].to_sym
   if node["docker_compose"]["action"] == "remove"
     only_if node["docker_compose"]["binary"]["name"] + ' --version'
   end
+end
+
+# Removes the Docker Compose binary
+file node["docker_compose"]["binary"]["path"] do
+  action :delete
+  ignore_failure true
+  only_if 'docker-compose --version'
+  only_if do node["docker_compose"]["action"] == "remove" end
 end

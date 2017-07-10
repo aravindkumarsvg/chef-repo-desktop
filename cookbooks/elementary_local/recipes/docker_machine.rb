@@ -19,6 +19,8 @@
 # Installs Docker Machine
 remote_file node["docker_machine"]["binary"]["path"] do
   source node["docker_machine"]["binary"]["uri"]
+  owner node["user"]
+  group node["group"]
   mode node["docker_machine"]["binary"]["mode"]
   action node["docker_machine"]["binary"]["action"].to_sym
   only_if { defined? node["docker_machine"]["action"] && node["docker_machine"]["action"] == "install" }

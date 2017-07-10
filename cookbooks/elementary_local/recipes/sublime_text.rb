@@ -42,6 +42,16 @@ package "sublime-text" do
   end
 end
 
+# Creates the Sublime Text Package Control directory
+directory node["sublime_text"]["package_control"]["directory"] do
+  owner node["user"]
+  group node["group"]
+  mode node["sublime_text"]["package_control"]["mode"]
+  recursive true
+  action :create
+  only_if { defined? node["sublime_text"]["action"] && node["sublime_text"]["action"] == "install" }
+end
+
 # Installs Package Control
 remote_file node["sublime_text"]["package_control"]["path"] do
   source node["sublime_text"]["package_control"]["uri"]
@@ -50,6 +60,16 @@ remote_file node["sublime_text"]["package_control"]["path"] do
   mode node["sublime_text"]["package_control"]["mode"]
   action node["sublime_text"]["package_control"]["action"].to_sym
   only_if { defined? node["sublime_text"]["action"] && node["sublime_text"]["action"] == "install" && ::File.directory?(node["sublime_text"]["package_control"]["directory"]) }
+end
+
+# Creates the Sublime Text packages directory
+directory node["sublime_text"]["package"]["path"] do
+  owner node["user"]
+  group node["group"]
+  mode node["sublime_text"]["package"]["mode"]
+  recursive true
+  action :create
+  only_if { defined? node["sublime_text"]["action"] && node["sublime_text"]["action"] == "install" }
 end
 
 # Installs Sublime Packages
