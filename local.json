@@ -1,5 +1,6 @@
 {
   "run_list":  [
-                "recipe[elementary_local::default]"
+                "recipe[elementary_local::neovim]",
+                "recipe[elementary_local::permission_setter]"
               ]
 }

@@ -3,3 +3,5 @@
 .chef/cookbooks/
 .chef/remote_file/
 .chef/chef-stacktrace.out
+local-mode-cache/
+nodes/

@@ -41,3 +41,53 @@ package "neovim" do
     notifies node["neovim"]["apt_repository"]["action"].to_sym, 'apt_repository[neovim]', :immediately 
   end
 end
+
+# Creates the vim-plug directory
+directory node["neovim"]["vim_plug"]["path"] do
+  recursive true
+  owner node["user"]
+  group node["group"]
+  mode node["neovim"]["vim_plug"]["mode"]
+  if node["neovim"]["action"] == "install"
+    action node["neovim"]["vim_plug"]["action"].to_sym
+  else
+    action :nothing
+  end
+end
+
+# Creates the vim-plug plug-in directory
+directory node["neovim"]["vim_plug"]["plugin_path"] do
+  recursive true
+  owner node["user"]
+  group node["group"]
+  mode node["neovim"]["vim_plug"]["mode"]
+  if node["neovim"]["action"] == "install"
+    action node["neovim"]["vim_plug"]["action"].to_sym
+  else
+    action :nothing
+  end
+end
+
+# Installs vim-plug Neovim pluggin manager
+remote_file node["neovim"]["vim_plug"]["file_path"] do
+  source node["neovim"]["vim_plug"]["uri"]
+  owner node["user"]
+  group node["group"]
+  mode node["neovim"]["vim_plug"]["mode"]
+  action node["neovim"]["vim_plug"]["action"].to_sym
+  if node["neovim"]["action"] == "remove"
+    notifies node["neovim"]["vim_plug"]["action"].to_sym, "directory[" + node["neovim"]["vim_plug"]["path"] + "]", :immediately
+  end
+end
+
+# Creates the Plugin file
+cookbook_file node["neovim"]["vim_plug"]["plugin_file_path"] do
+  source node["neovim"]["vim_plug"]["plugin_file"]
+  owner node["user"]
+  group node["group"]
+  mode node["neovim"]["vim_plug"]["mode"]
+  action node["neovim"]["vim_plug"]["action"].to_sym
+  if node["neovim"]["action"] == "remove"
+    notifies node["neovim"]["vim_plug"]["action"].to_sym, "directory[" + node["neovim"]["vim_plug"]["plugin_path"] + "]", :immediately
+  end
+end

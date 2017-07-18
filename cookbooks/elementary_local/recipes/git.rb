@@ -40,3 +40,10 @@ execute 'git_username' do
   not_if 'git config --global --get user.name'
   only_if do defined? node["git"]["action"] && node["git"]["action"] == "install" end
 end
+
+# Configures Editor
+execute 'git_editor' do
+  command 'git config --global core.editor "' + node["git"]["editor"] + '"'
+  not_if 'git config --global --get core.editor'
+  only_if do defined? node["git"]["action"] && node["git"]["action"] == "install" end
+end
