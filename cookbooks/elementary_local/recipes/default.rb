@@ -25,3 +25,5 @@ include_recipe "elementary_local::nvm"
 include_recipe "elementary_local::terminator"
 # Inlcudes Permission Setter recipe
 include_recipe "elementary_local::permission_setter"
+# Inlcudes Utilities recipe
+include_recipe "elementary_local::utilities"
