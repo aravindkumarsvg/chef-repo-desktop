@@ -11,3 +11,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'rking/ag.vim'
 
 call plug#end()
+
+" Converts tabs to 2 spaces
+set tabstop=2 shiftwidth=2 expandtab
