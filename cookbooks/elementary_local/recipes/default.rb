@@ -23,6 +23,12 @@ include_recipe "elementary_local::docker"
 include_recipe "elementary_local::nvm"
 # Includes Terminator recipe
 include_recipe "elementary_local::terminator"
+# Includes VLC recipe
+include_recipe "elementary_local::vlc"
+# Includes Xclip recipe
+include_recipe "elementary_local::xclip"
+# Includes Deluge torrent recipe
+include_recipe "elementary_local::deluge_torrent"
 # Inlcudes Permission Setter recipe
 include_recipe "elementary_local::permission_setter"
 # Inlcudes Utilities recipe
