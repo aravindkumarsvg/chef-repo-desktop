@@ -1,5 +1,5 @@
 {
   "run_list":  [
-                "recipe[elementary_local::deluge_torrent]"
+                "recipe[elementary_local::default]"
               ]
 }

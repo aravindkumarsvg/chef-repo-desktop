@@ -13,6 +13,8 @@ include_recipe "elementary_local::google_chrome"
 include_recipe "elementary_local::neovim"
 # Includes Sublime Text recipe
 include_recipe "elementary_local::sublime_text"
+# Includes VS Code recipe
+include_recipe "elementary_local::vs_code"
 # Includes Virtualbox recipe
 include_recipe "elementary_local::virtualbox"
 # Includes Vagrant recipe
