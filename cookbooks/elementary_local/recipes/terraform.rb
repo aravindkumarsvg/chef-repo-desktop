@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Installs Docker Machine
+# Downloads terraform
 remote_file node["terraform"]["binary"]["download_path"] do
     source node["terraform"]["binary"]["uri"]
     owner node["user"]

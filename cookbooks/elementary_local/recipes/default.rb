@@ -23,6 +23,8 @@ include_recipe "elementary_local::vagrant"
 include_recipe "elementary_local::docker"
 # Includes NVM recipe
 include_recipe "elementary_local::nvm"
+# Includes Go recipe
+include_recipe "elementary_local::go"
 # Includes Terminator recipe
 include_recipe "elementary_local::terminator"
 # Includes VLC recipe
