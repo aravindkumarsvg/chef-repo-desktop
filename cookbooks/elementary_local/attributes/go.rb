@@ -12,6 +12,7 @@ default["go"]["profile"] = {
   "content" => <<-EOH
   export GOROOT=#{node['go']['binary']['extraction_path']}
 export GOPATH=$HOME/Workspace/go
+export GOPATH=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 EOH
 }
