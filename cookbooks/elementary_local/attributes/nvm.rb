@@ -16,7 +16,8 @@ EOF
 
 default["nvm"]["node"] =  {
                             "versions" => {
-                              "8.1.3" => "install"
+                              "9" => "install",
+                              "4" => "install"
                             },
-                            "default" => "8.1.3"
+                            "default" => "9"
                           }
