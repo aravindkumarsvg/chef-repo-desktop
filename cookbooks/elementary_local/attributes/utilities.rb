@@ -10,5 +10,8 @@ default['utilities']['packages'] = {
   },
   "axel" => {
     "action" => "install"
+  },
+  "expect" => {
+    "action" => "install"
   }
 }
