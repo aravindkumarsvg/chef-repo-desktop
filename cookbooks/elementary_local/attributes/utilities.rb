@@ -7,5 +7,8 @@ default['utilities']['packages'] = {
   },
   "sysstat" => {
     "action" => "install"
+  },
+  "axel" => {
+    "action" => "install"
   }
 }
