@@ -13,5 +13,8 @@ default['utilities']['packages'] = {
   },
   "expect" => {
     "action" => "install"
+  },
+  "apache2-utils" => {
+    "action" => "install"
   }
 }
