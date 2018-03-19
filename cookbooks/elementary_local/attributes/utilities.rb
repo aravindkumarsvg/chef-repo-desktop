@@ -16,5 +16,8 @@ default['utilities']['packages'] = {
   },
   "apache2-utils" => {
     "action" => "install"
+  },
+  "xpad" => {
+    "action" => "install"
   }
 }
