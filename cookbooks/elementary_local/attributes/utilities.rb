@@ -19,5 +19,11 @@ default['utilities']['packages'] = {
   },
   "xpad" => {
     "action" => "install"
+  },
+  "android-tools-adb" => {
+    "action" => "install"
+  },
+  "android-tools-fastboot" => {
+    "action" => "install"
   }
 }
