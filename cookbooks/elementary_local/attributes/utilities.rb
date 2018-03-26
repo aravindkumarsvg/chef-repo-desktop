@@ -10,6 +10,9 @@ default['utilities']['packages'] = {
   "tcptrack" => {
     "action" => "install"
   },
+  "nethogs" => {
+    "action" => "install"
+  },
   # Overall statistics
   "htop" => {
     "action" => "install"
