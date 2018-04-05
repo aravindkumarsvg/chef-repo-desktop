@@ -4,7 +4,7 @@ maintainer_email 'aravind_7svg@outlook.com -I apachev2'
 license 'All Rights Reserved'
 description 'Installs/Configures elementary_local'
 long_description 'Installs/Configures elementary_local'
-version '0.1.0'
+version '2.0.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 # The `issues_url` points to the location where issues for this cookbook are

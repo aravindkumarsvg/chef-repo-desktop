@@ -33,7 +33,11 @@ include_recipe "elementary_local::vlc"
 include_recipe "elementary_local::xclip"
 # Includes Deluge torrent recipe
 include_recipe "elementary_local::deluge_torrent"
-# Inlcudes Permission Setter recipe
-include_recipe "elementary_local::permission_setter"
-# Inlcudes Utilities recipe
+# Includes Terraform recipe
+include_recipe "elementary_local::terraform"
+# Includes Packer recipe
+include_recipe "elementary_local::packer"
+# Includes Utilities recipe
 include_recipe "elementary_local::utilities"
+# Includes Permission Setter recipe
+include_recipe "elementary_local::permission_setter"
