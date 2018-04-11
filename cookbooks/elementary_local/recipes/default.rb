@@ -25,6 +25,8 @@ include_recipe "elementary_local::docker"
 include_recipe "elementary_local::nvm"
 # Includes Go recipe
 include_recipe "elementary_local::go"
+# Includes Lua recipe
+include_recipe "elementary_local::lua"
 # Includes Terminator recipe
 include_recipe "elementary_local::terminator"
 # Includes VLC recipe
