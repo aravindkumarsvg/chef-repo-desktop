@@ -47,5 +47,9 @@ default['utilities']['packages'] = {
   },
   "android-tools-fastboot" => {
     "action" => "install"
+  },
+  # Screen utility
+  "screen" => {
+    "action" => "install"
   }
 }
