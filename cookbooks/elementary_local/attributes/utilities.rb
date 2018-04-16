@@ -25,6 +25,10 @@ default['utilities']['packages'] = {
   "atop" => {
     "action" => "install"
   },
+  # Power usage statistics
+  "powertop" => {
+    "action" => "install"
+  },
   # Downloader
   "axel" => {
     "action" => "install"
