@@ -7,6 +7,10 @@
 
 # Includes Git recipe
 include_recipe "elementary_local::git"
+# Inculdes Ansible recipe
+include_recipe "elementary_local::ansible"
+# Inculdes CFEngine recipe
+include_recipe "elementary_local::cfengine"
 # Inculdes Google Chrome recipe
 include_recipe "elementary_local::google_chrome"
 # Includes Neovim recipe
