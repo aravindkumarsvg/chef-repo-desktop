@@ -29,3 +29,8 @@ end
 package node["lua"]["package"] do
     action node["lua"]["action"].to_sym
 end
+
+# Installs the lua package manager
+package node["lua"]["package_manager"]["name"] do
+    action node["lua"]["package_manager"]["action"].to_sym
+end
