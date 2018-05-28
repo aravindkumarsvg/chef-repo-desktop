@@ -18,5 +18,6 @@ default["vs_code"]["extensions"] = [
 	"ms-vscode.PowerShell",
 	"PKief.material-icon-theme",
 	"humao.rest-client",
-	"marcostazi.VS-code-vagrantfile"
+	"marcostazi.VS-code-vagrantfile",
+	"tuxtina.json2yaml"
 ]
