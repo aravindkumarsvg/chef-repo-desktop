@@ -19,5 +19,6 @@ default["vs_code"]["extensions"] = [
 	"PKief.material-icon-theme",
 	"humao.rest-client",
 	"marcostazi.VS-code-vagrantfile",
-	"tuxtina.json2yaml"
+	"tuxtina.json2yaml",
+	"patricklee.vsnotes"
 ]
